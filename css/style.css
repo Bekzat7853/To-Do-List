@@ -5,6 +5,6 @@
 }
 
 body {
-    background-color: #5F81B2;
-    font-family: 'Nunito', sans-serif;
+    background-color: #5F81B2!important;
+    font-family: 'Nunito', sans-serif!important;
 }
