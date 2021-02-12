@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-  
+
   // Events On Submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -83,5 +83,5 @@ window.addEventListener("DOMContentLoaded", () => {
     if (target && target.classList.contains("tasks__item-checkbox")) {
       target.parentElement.firstElementChild.classList.toggle("lineThrough");
     }
-  });
+  })
 });
