@@ -20,6 +20,8 @@
     <title>TO-DO List</title>
   </head>
   <body>
+
+    <!-- Page -->
     <div class="main">
       <div class="container">
         <div class="main__top row">
@@ -102,8 +104,9 @@
         </div>
       </div>
     </div>
+    <!-- Page -->
 
-    <!-- Modal -->
+    <!-- Add Modal -->
     <div
       class="modal fade"
       id="openModal"
@@ -130,29 +133,45 @@
         </form>
       </div>
     </div>
+    <!-- Add Modal -->
 
-    <!-- DeleteModal -->
+    <!-- Delete Modal -->
     <div
-    class="modal fade"
-    id="deleteModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content" id="modalDelete">
-        <h3 class="modal-content__title">Вы уверены что хотите удалить задачу навсегда?</h3>
-        <button class="modal-content__delete-btn btn btn-danger" data-bs-dismiss="modal">Удалить</button>
-        <buttom class="modal-content__close-btn btn btn-primary" data-bs-dismiss="modal">Отмена</buttom>
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content" id="modalDelete">
+          <h3 class="modal-content__title">
+            Вы уверены что хотите удалить задачу навсегда?
+          </h3>
+          <button
+            class="modal-content__delete-btn btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Удалить
+          </button>
+          <buttom
+            class="modal-content__close-btn btn btn-primary"
+            data-bs-dismiss="modal"
+            >Отмена</buttom
+          >
+        </div>
       </div>
     </div>
-  </div>
+    <!-- Delete Modal -->
 
+    <!-- Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
     <script src="scripts/script.js"></script>
+    <!-- Scripts -->
+    
   </body>
 </html>

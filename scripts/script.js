@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const textArea = document.querySelector("textarea");
   const form = document.querySelector("form");
   const taskParent = document.querySelector(".tasks");
-  const task = document.querySelectorAll(".tasks__item");
   const deletebtn = document.querySelector(".modal-content__delete-btn");
 
   class ToDo {
@@ -51,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             target.parentElement.parentElement.remove();
           }
-        })
+        });
       });
     }
   }
@@ -83,5 +82,6 @@ window.addEventListener("DOMContentLoaded", () => {
     if (target && target.classList.contains("tasks__item-checkbox")) {
       target.parentElement.firstElementChild.classList.toggle("lineThrough");
     }
-  })
+  });
+
 });
