@@ -25,7 +25,12 @@
         <div class="main__top row">
           <h1 class="main__top-title col-4">TodoList</h1>
           <div class="col-4">
-            <button class="main__top-btn" type="button">
+            <button
+              class="main__top-btn"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#openModal"
+            >
               Создать новую задачу
             </button>
           </div>
@@ -34,7 +39,7 @@
         <div class="main__content">
           <h2 class="main__content-title">Список ЗАДАЧ</h2>
           <div class="tasks row">
-            <div class="col-5 tasks__item">
+            <!-- <div class="col-5 tasks__item">
               <h3 class="tasks__item-title">Заголовок задачи</h3>
               <p class="tasks__item-text">
                 Более длинное описание задачи на несолько строчек, может быть
@@ -43,7 +48,7 @@
               </p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
             </div>
             <div class="col-5 tasks__item">
@@ -51,7 +56,7 @@
               <p class="tasks__item-text">Короткое описание</p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
             </div>
             <div class="col-5 tasks__item">
@@ -59,7 +64,7 @@
               <p class="tasks__item-text"></p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
             </div>
             <div class="col-5 tasks__item">
@@ -67,7 +72,7 @@
               <p class="tasks__item-text">Короткое описание на 2 строчки</p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
             </div>
             <div class="col-5 tasks__item">
@@ -78,7 +83,7 @@
               <p class="tasks__item-text"></p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
             </div>
             <div class="col-5 tasks__item">
@@ -90,14 +95,64 @@
               </p>
               <input class="tasks__item-checkbox" type="checkbox" />
               <a href="#" class="tasks__item-deletebtn">
-                <img src="image/delete.svg" alt="" />
+                <img class="remove" src="image/delete.svg" alt="" />
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="openModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <form class="modal-content">
+          <h3 class="modal-content__title">Создать задачу</h3>
+          <input type="text" id="inputTitle" placeholder="Заголовок задачи" />
+          <textarea cols="30" rows="10" placeholder="описание"></textarea>
+          <button class="btn btn-primary submit" type="submit">
+            Сохранить
+          </button>
+          <button
+            class="btn btn-secondary close"
+            type="button"
+            data-bs-dismiss="modal"
+          >
+            Отмена
+          </button>
+          <sup data-bs-dismiss="modal">X</sup>
+        </form>
+      </div>
+    </div>
+
+    <!-- DeleteModal -->
+    <div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content" id="modalDelete">
+        <h3 class="modal-content__title">Вы уверены что хотите удалить задачу навсегда?</h3>
+        <button class="modal-content__delete-btn btn btn-danger" data-bs-dismiss="modal">Удалить</button>
+        <buttom class="modal-content__close-btn btn btn-primary" data-bs-dismiss="modal">Отмена</buttom>
+      </div>
+    </div>
+  </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>
