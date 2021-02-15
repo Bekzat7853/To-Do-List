@@ -5,9 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   const taskParent = document.querySelector(".tasks");
   const deletebtn = document.querySelector(".modal-content__delete-btn");
-  const tasks = document.querySelectorAll(".tasks__item");
-
-  const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
   class ToDo {
     constructor(title, text) {
@@ -39,12 +36,6 @@ window.addEventListener("DOMContentLoaded", () => {
       taskParent.append(todo);
       form.append(success);
 
-      todos.push({
-        title: inputTitle.value,
-        text: textArea.value,
-      });
-      localStorage.setItem("todos", JSON.stringify(todos));
-
       setTimeout(() => {
         success.remove();
       }, 2000);
@@ -58,8 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
           if (target && target.classList.contains("remove")) {
             event.preventDefault();
             target.parentElement.parentElement.remove();
-
-            localStorage.removeItem("todos");
           }
         });
       });
@@ -93,34 +82,5 @@ window.addEventListener("DOMContentLoaded", () => {
     if (target && target.classList.contains("tasks__item-checkbox")) {
       target.parentElement.firstElementChild.classList.toggle("lineThrough");
     }
-  });
-
-  let todo = JSON.parse(localStorage.getItem("todos"));
-  let items = todo.map((item) => {
-    let task = {
-      title: item.title,
-      text: item.text,
-    };
-
-    return task;
-  });
-
-  items.forEach((item) => {
-    let div = document.createElement("div");
-    div.classList.add("col-5");
-    div.classList.add("tasks__item");
-
-    div.innerHTML = `
-      <h3 class="tasks__item-title">${item.title}</h3>
-      <p class="tasks__item-text">
-        ${item.text}
-      </p>
-      <input class="tasks__item-checkbox" type="checkbox" />
-      <a href="#" class="tasks__item-deletebtn" data-bs-toggle="modal" data-bs-target="#deleteModal">
-        <img class="remove" src="image/delete.svg" alt="" />
-      </a>
-    `;
-
-    taskParent.append(div);
   });
 });
